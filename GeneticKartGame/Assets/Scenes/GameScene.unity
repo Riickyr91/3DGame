@@ -364,13 +364,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cdfbf6eedffbb44ba2d147f669f8472, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceleration: 0
-  turn: 0
+  a: 0
+  t: 0
   timeSinceStart: 0
   overallFitness: 0
-  distanceMultiplier: 1.4
+  distanceMultipler: 1.4
   avgSpeedMultiplier: 0.2
   sensorMultiplier: 0.1
+  LAYERS: 1
+  NEURONS: 10
 --- !u!54 &459012761
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -406,6 +408,20 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1292804919}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &459012764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459012759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 190e33deeadaea443b9cbedb1aaa25b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  biases: []
+  fitness: 0
 --- !u!1 &515199291
 GameObject:
   m_ObjectHideFlags: 0
@@ -889,7 +905,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4334133988458008, guid: b471b549ed0cf0b42b15b41a16e07b88, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.250001
+      value: 1.255
       objectReference: {fileID: 0}
     - target: {fileID: 4334133988458008, guid: b471b549ed0cf0b42b15b41a16e07b88, type: 3}
       propertyPath: m_LocalPosition.z
