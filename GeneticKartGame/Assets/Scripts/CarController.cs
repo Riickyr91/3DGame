@@ -33,15 +33,15 @@ public class CarController : MonoBehaviour
         startPosition = transform.position;
         startRotation = transform.eulerAngles;
         network = GetComponent<NNet>();
+    }
 
-        //TEST CODE
-        network.Initialise(LAYERS, NEURONS);
+    public void ResetWithNetwork(NNet net)
+    {
+        network = net;
+        Reset();
     }
 
     public void Reset() {
-
-        //TEST CODE
-        network.Initialise(LAYERS, NEURONS);
 
         timeSinceStart = 0f;
         totalDistanceTravelled = 0f;
@@ -53,7 +53,7 @@ public class CarController : MonoBehaviour
     }
 
     private void OnCollisionEnter (Collision collision) {
-        Reset();
+        Death();
     }
 
     private void FixedUpdate() {
@@ -77,6 +77,10 @@ public class CarController : MonoBehaviour
 
     }
 
+    private void Death()
+    {
+        GameObject.FindObjectOfType<GeneticManager>().Death(overallFitness, network);
+    }
 
     private void CalculateFitness() {
 
@@ -86,12 +90,12 @@ public class CarController : MonoBehaviour
        overallFitness = (totalDistanceTravelled*distanceMultipler)+(avgSpeed*avgSpeedMultiplier)+(((aSensor+bSensor+cSensor)/3)*sensorMultiplier);
 
         if (timeSinceStart > 20 && overallFitness < 40) {
-            Reset();
+            Death();
         }
 
         if (overallFitness >= 1000) {
             //Saves network to a JSON
-            Reset();
+            Death();
         }
 
     }
