@@ -8,6 +8,7 @@ public class CarControllerActive : MonoBehaviour
     public GameObject carControl2;
     public GameObject carControl3;
     public GameObject carControl4;
+    public GameObject IAControl;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,7 @@ public class CarControllerActive : MonoBehaviour
         carControl3.GetComponent<LPPV_CarController>().enabled = true;
         carControl4.GetComponent<LPPV_CarController>().enabled = true;
 
+        IAControl.GetComponent<CarController>().enabled = true;
     }
 
 

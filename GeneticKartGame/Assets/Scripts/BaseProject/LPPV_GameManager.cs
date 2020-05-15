@@ -4,6 +4,7 @@ using UnityEngine;
 public class LPPV_GameManager : MonoBehaviour 
 {
 	[SerializeField] private GameObject sedan, sports, utility, bus;
+	public int lapsRequirement;
 	private void Start()
 	{
 		if (sedan == null || sports == null || utility == null || bus == null)

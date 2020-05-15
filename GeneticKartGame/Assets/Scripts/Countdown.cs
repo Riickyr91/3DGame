@@ -10,10 +10,14 @@ public class Countdown : MonoBehaviour
     public AudioSource goAudio;
     public GameObject lapTimer;
     public GameObject carControllers;
+    public AudioSource levelMusic;
+    public GameObject lapRequirement;
+    public GameObject GameManager;
 
     // Start is called before the first frame update
     void Start()
     {
+        lapRequirement.GetComponent<Text>().text = "" + GameManager.GetComponent<LPPV_GameManager>().lapsRequirement;
         StartCoroutine(countStart());
     }
 
@@ -39,7 +43,7 @@ public class Countdown : MonoBehaviour
         yield return new WaitForSeconds(1);
         countDown.SetActive(false);
         goAudio.Play();
-
+        levelMusic.Play();
         lapTimer.SetActive(true);
         carControllers.SetActive(true);
 
