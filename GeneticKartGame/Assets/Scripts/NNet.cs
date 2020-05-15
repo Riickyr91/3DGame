@@ -156,4 +156,10 @@ public class NNet : MonoBehaviour
         return (1 / (1 + Mathf.Exp(-s)));
     }
 
+
+    public void save(string path)
+    {
+        NNetData netData = new NNetData(this);
+        SaveSystem.Save(path, netData);
+    }
 }

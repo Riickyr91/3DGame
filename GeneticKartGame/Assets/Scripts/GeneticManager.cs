@@ -28,11 +28,25 @@ public class GeneticManager : MonoBehaviour
     [Header("Public View")]
     public int currentGeneration;
     public int currentGenome = 0;
+    public int maxGeneration = 5;
 
 
     private void Start()
     {
         CreatePopulation();
+    }
+
+    public void SaveBestGenome()
+    {
+        SortPopulation();
+        population[0].save(Application.persistentDataPath + "/net.dat");
+    }
+
+    public void LoadBestGenome()
+    {
+        NNetData data;
+        SaveSystem.Load(Application.persistentDataPath + "/net.dat", out data);
+        controller.ResetWithNetwork(data.getNNet());
     }
 
     private void CreatePopulation()
@@ -59,21 +73,38 @@ public class GeneticManager : MonoBehaviour
 
     public void Death(float fitness, NNet network)
     {
-        if(currentGenome < population.Length - 1)
+        if(currentGenome == population.Length - 1)
         {
-            population[currentGenome].fitness = fitness;
-            currentGenome++;
-            ResetToCurrentGenome();
+            currentGeneration++;
+        }
+        if (currentGeneration >= maxGeneration)
+        {
+            SaveBestGenome();
+            Debug.Log("Best saved");
+            LoadBestGenome();
+            Debug.Log("Load best");
+
         } else
         {
-            RePopulate();
+            if (currentGenome < population.Length - 1)
+            {
+                population[currentGenome].fitness = fitness;
+                currentGenome++;
+                ResetToCurrentGenome();
+            }
+            else
+            {
+                RePopulate();
+
+            }
         }
+
     }
 
     private void RePopulate()
     {
         genePool.Clear();
-        currentGeneration++;
+        //currentGeneration++;
         naturallySelected = 0;
         SortPopulation();
 
