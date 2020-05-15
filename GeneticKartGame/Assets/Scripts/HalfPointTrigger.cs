@@ -9,6 +9,6 @@ public class HalfPointTrigger : MonoBehaviour
 
     void OnTriggerEnter(){
         LapCompleteTrig.SetActive(true);
-        HalfLapTrig.SetActive(true);
+        HalfLapTrig.SetActive(false);
     }
 }
