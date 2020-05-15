@@ -967,7 +967,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: f5c9ba489e100664d8b19258b54853fe, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: f5c9ba489e100664d8b19258b54853fe, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1431,7 +1431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6016c743c6a112d408fae9df26bb0cfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 459012760}
+  controller: {fileID: 230829865}
   initialPopulation: 85
   mutationRate: 0.055
   bestAgentSelection: 8

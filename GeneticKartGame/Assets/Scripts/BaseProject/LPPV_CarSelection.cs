@@ -44,12 +44,12 @@ public class LPPV_CarSelection : MonoBehaviour {
 		if (nextButton != null) 
 		{
 			if(nextButton.GetComponent<Button>())
-				nextButton.GetComponent<Button> ().onClick.AddListener (() => { currentCar++; if(cam != null) cam.transform.position = new Vector3(cam.transform.position.x + 20f, cam.transform.position.y, cam.transform.position.z);} );
+				nextButton.GetComponent<Button> ().onClick.AddListener (() => { currentCar++; if(cam != null) cam.transform.position = new Vector3(cam.transform.position.x + 30f, cam.transform.position.y, cam.transform.position.z);} );
 		}
 		if (prevButton != null) 
 		{
 			if(prevButton.GetComponent<Button>())
-				prevButton.GetComponent<Button> ().onClick.AddListener (() => { currentCar--; if(cam != null) cam.transform.position = new Vector3(cam.transform.position.x - 20f, cam.transform.position.y, cam.transform.position.z); } );
+				prevButton.GetComponent<Button> ().onClick.AddListener (() => { currentCar--; if(cam != null) cam.transform.position = new Vector3(cam.transform.position.x - 30f, cam.transform.position.y, cam.transform.position.z); } );
 		}
 		CheckStatus ();
 	}

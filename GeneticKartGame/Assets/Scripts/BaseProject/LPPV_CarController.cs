@@ -39,6 +39,8 @@ public class LPPV_CarController : MonoBehaviour {
 	[SerializeField] private LPPV_VButton accelerateButton, brakeButton, handBrakeButton;
 	#endif
 
+	public AudioSource audio;
+
 	[HideInInspector] public bool Accelerating = false, Deccelerating = false, HandBrake = false;
 	private Rigidbody _rgbd;
 	public float CurrentSpeed{
@@ -164,6 +166,8 @@ public class LPPV_CarController : MonoBehaviour {
 			else
 				speedText.text = ((int)CurrentSpeed).ToString () + met;
 		}
+
+			engineSound();
 	}
 	private void FixedUpdate()
 	{
@@ -197,6 +201,11 @@ public class LPPV_CarController : MonoBehaviour {
 		}
 		#endif
 		Move (motor, steering, handBrakeInput);
+	}
+
+	private void engineSound()
+	{
+		audio.pitch = CurrentSpeed/topSpeed + 1;
 	}
 
 }

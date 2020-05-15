@@ -26,6 +26,6 @@ public class LPPV_GameManager : MonoBehaviour
 
 	public void LoadLevel(int index)
 	{
-		SceneManager.LoadScene (index);
+		SceneManager.LoadScene(index);
 	}
 }
