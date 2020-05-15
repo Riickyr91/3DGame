@@ -30,10 +30,19 @@ public class GeneticManager : MonoBehaviour
     public int currentGenome = 0;
     public int maxGeneration = 5;
 
+    private bool isSimulationFinish = false;
+    public bool playBestCar = false;
 
     private void Start()
     {
-        CreatePopulation();
+        if (playBestCar)
+        {
+            LoadBestGenome();
+        } else
+        {
+            CreatePopulation();
+        }
+
     }
 
     public void SaveBestGenome()
@@ -73,18 +82,11 @@ public class GeneticManager : MonoBehaviour
 
     public void Death(float fitness, NNet network)
     {
-        if(currentGenome == population.Length - 1)
+        if (isSimulationFinish || playBestCar)
         {
-            currentGeneration++;
-        }
-        if (currentGeneration >= maxGeneration)
-        {
-            SaveBestGenome();
-            Debug.Log("Best saved");
             LoadBestGenome();
-            Debug.Log("Load best");
-
-        } else
+        }
+        else
         {
             if (currentGenome < population.Length - 1)
             {
@@ -94,11 +96,20 @@ public class GeneticManager : MonoBehaviour
             }
             else
             {
-                RePopulate();
-
+                currentGeneration++;
+                if (currentGeneration == maxGeneration)
+                {
+                    Debug.Log("Simulation finish");
+                    isSimulationFinish = true;
+                    SaveBestGenome();
+                    LoadBestGenome();
+                }
+                else
+                {
+                    RePopulate();
+                }
             }
         }
-
     }
 
     private void RePopulate()

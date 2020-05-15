@@ -65,7 +65,7 @@ public class NNetData
         // Hidden layers
         List<Matrix<float>> hiddenLayers = new List<Matrix<float>>();
         int nNeurons;
-        for(int i = 0; i < nLayers-1; i++)
+        for(int i = 0; i < nLayers-2; i++)
         {
             nNeurons = weights[i].ColumnCount;
             hiddenLayers.Add(Matrix<float>.Build.Dense(1, nNeurons));

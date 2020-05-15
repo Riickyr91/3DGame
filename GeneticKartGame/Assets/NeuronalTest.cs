@@ -39,7 +39,7 @@ public class NeuronalTest : MonoBehaviour
 
         text += " *** BIASES ***";
         text += "[";
-        for(int i = 0; i < net.biases.Count; i++)
+        for (int i = 0; i < net.biases.Count; i++)
         {
             text += net.biases[i].ToString();
             if (i < net.biases.Count - 1) text += ", ";
@@ -54,7 +54,7 @@ public class NeuronalTest : MonoBehaviour
         text += "Size input layer = " + "(" + nRows + ", " + nColumns + ")\n";
 
         text += "Size hidden layers = ";
-        for(int i = 0; i < net.hiddenLayers.Count; i++)
+        for (int i = 0; i < net.hiddenLayers.Count; i++)
         {
             nRows = net.hiddenLayers[i].RowCount;
             nColumns = net.hiddenLayers[i].ColumnCount;
@@ -64,7 +64,9 @@ public class NeuronalTest : MonoBehaviour
 
         nRows = net.outputLayer.RowCount;
         nColumns = net.outputLayer.ColumnCount;
-        text += "Size output layer = " + "(" + nRows + ", " + nColumns + ")\n"; ;
+        text += "Size output layer = " + "(" + nRows + ", " + nColumns + ")\n";
+
+        text += "Fitness = " + net.fitness + "\n";
 
         uiText.text = text;
     }
