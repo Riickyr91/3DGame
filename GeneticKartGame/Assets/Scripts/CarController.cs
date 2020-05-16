@@ -5,12 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(NNet))]
 public class CarController : MonoBehaviour
 {
-    private Vector3 startPosition, startRotation;
-    private NNet network;
-
+    // Public atributtes
     [Range(-1f,1f)]
     public float a,t;
-
     public float timeSinceStart = 0f;
 
     [Header("Fitness")]
@@ -23,6 +20,14 @@ public class CarController : MonoBehaviour
     public int LAYERS = 1;
     public int NEURONS = 10;
 
+    [Header("IA options")]
+    public bool useIA = false;
+
+
+    // Private atributtes
+    private Vector3 startPosition, startRotation;
+    private NNet network;
+
     private Vector3 lastPosition;
     private float totalDistanceTravelled;
     private float avgSpeed;
@@ -31,10 +36,18 @@ public class CarController : MonoBehaviour
 
     private bool stop = false;
 
+
     private void Awake() {
         startPosition = transform.position;
         startRotation = transform.eulerAngles;
         network = GetComponent<NNet>();
+
+        if (useIA)
+        {
+            NNetData data;
+            SaveSystem.Load(Application.persistentDataPath + "/net.dat", out data);
+            network = data.getNNet();
+        }
     }
 
     public void ResetWithNetwork(NNet net)
@@ -60,7 +73,10 @@ public class CarController : MonoBehaviour
     }
 
     private void OnCollisionEnter (Collision collision) {
-        Death();
+        if (!useIA)
+        {
+            Death();
+        }
     }
 
     private void FixedUpdate() {
