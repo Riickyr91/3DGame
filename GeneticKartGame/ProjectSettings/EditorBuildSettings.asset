@@ -6,9 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 501a59b9151977a48a1fb6d2421125e5
+  - enabled: 1
     path: Assets/Scenes/CarSelection.unity
     guid: a0551d11f0e9b7041b3480f303401a78
   - enabled: 1
     path: Assets/Scenes/CarScene.unity
     guid: a061688c7467c1b499505ffe2fa0db23
+  - enabled: 1
+    path: Assets/Scenes/Settings.unity
+    guid: 99f3a3cd067f0284f8544ffb29a87eae
+  - enabled: 1
+    path: Assets/Scenes/Ranking.unity
+    guid: af76cbb9edb5da24ab2ac90cafdde546
+  - enabled: 1
+    path: Assets/Scenes/IATraining.unity
+    guid: 5c3e8171a17795c40b9d4b2ac12684c4
   m_configObjects: {}

@@ -14,6 +14,12 @@ public class LapTimeManager : MonoBehaviour
     public GameObject SecondBox;
     public GameObject MilliBox; 
 
+    void Start(){
+        MinuteCount = 0;
+        SecondCount = 0;
+        MilliCount = 0f;
+    }
+
     // Update is called once per frame
     void Update()
     {

@@ -43,13 +43,16 @@ public class LPPV_CarSelection : MonoBehaviour {
 	{
 		if (nextButton != null) 
 		{
-			if(nextButton.GetComponent<Button>())
+			if(nextButton.GetComponent<Button>()){
 				nextButton.GetComponent<Button> ().onClick.AddListener (() => { currentCar++; if(cam != null) cam.transform.position = new Vector3(cam.transform.position.x + 30f, cam.transform.position.y, cam.transform.position.z);} );
+				
+			}
 		}
 		if (prevButton != null) 
 		{
-			if(prevButton.GetComponent<Button>())
+			if(prevButton.GetComponent<Button>()){
 				prevButton.GetComponent<Button> ().onClick.AddListener (() => { currentCar--; if(cam != null) cam.transform.position = new Vector3(cam.transform.position.x - 30f, cam.transform.position.y, cam.transform.position.z); } );
+			}
 		}
 		CheckStatus ();
 	}
@@ -62,6 +65,6 @@ public class LPPV_CarSelection : MonoBehaviour {
 	public void SelectCar()
 	{
 		currentCarType = (CarType)currentCar;
-		SceneManager.LoadScene (1);
+		SceneManager.LoadScene (2);
 	}
 }

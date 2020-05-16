@@ -21,6 +21,8 @@ public class Finish : MonoBehaviour
 
     public GameObject levelMusic;
 
+    public GameObject finishMenu;
+
     void OnTriggerEnter() {
         sedanCar.GetComponent<AudioSource>().Stop();
         busCar.GetComponent<AudioSource>().Stop();
@@ -41,6 +43,8 @@ public class Finish : MonoBehaviour
         busFinishCam.GetComponent<AudioSource>().Play();
         sportFinishCam.GetComponent<AudioSource>().Play();
         utilityFinishCam.GetComponent<AudioSource>().Play();
+
+        finishMenu.SetActive(true);
 
     }
 
