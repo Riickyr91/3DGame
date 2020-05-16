@@ -29,6 +29,8 @@ public class CarController : MonoBehaviour
 
     private float aSensor,bSensor,cSensor;
 
+    private bool stop = false;
+
     private void Awake() {
         startPosition = transform.position;
         startRotation = transform.eulerAngles;
@@ -39,6 +41,11 @@ public class CarController : MonoBehaviour
     {
         network = net;
         Reset();
+    }
+
+    public void SetStop(bool stop)
+    {
+        this.stop = stop;
     }
 
     public void Reset() {
@@ -58,23 +65,19 @@ public class CarController : MonoBehaviour
 
     private void FixedUpdate() {
 
-        InputSensors();
-        lastPosition = transform.position;
+        if (!stop)
+        {
+            InputSensors();
+            lastPosition = transform.position;
 
+            (a, t) = network.RunNetwork(aSensor, bSensor, cSensor);
 
-        (a, t) = network.RunNetwork(aSensor, bSensor, cSensor);
+            MoveCar(a, t);
 
+            timeSinceStart += Time.deltaTime;
 
-        MoveCar(a,t);
-
-        timeSinceStart += Time.deltaTime;
-
-        CalculateFitness();
-
-        //a = 0;
-        //t = 0;
-
-
+            CalculateFitness();
+        }
     }
 
     private void Death()
