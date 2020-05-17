@@ -62,7 +62,7 @@ public class RankingMenu : MonoBehaviour
             File.Delete(path);
         }
         GameManager.ranking = new RankingData();
-
+        AudioManager.instance.Play("PulseSound");
         ShowRanking();
     }
 }

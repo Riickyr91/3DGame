@@ -56,7 +56,7 @@ public class LapComplete : MonoBehaviour
 
             lapCounter.GetComponent<Text>().text = "" + lapsDone;
 
-            if (lapsDone ==  gameManager.GetComponent<LPPV_GameManager>().lapsRequirement + 1){
+            if (lapsDone ==  GameManager.numRounds + 1){
                 raceFinish.SetActive(true);
             }
 

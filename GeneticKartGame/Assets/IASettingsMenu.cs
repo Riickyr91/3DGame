@@ -48,14 +48,16 @@ public class IASettingsMenu : MonoBehaviour
     }
 
     public void RestoreDefaultValues()
-    {
+    {   
+        AudioManager.instance.Play("PulseSound");
         GameManager.iaSettings = new IASettingsData();
         SaveSystem.Save(PathManager.iaSettingsPath, GameManager.iaSettings);
         ShowValues();
     }
 
     public void RestoreDefaultIA()
-    {
+    {   
+        AudioManager.instance.Play("PulseSound");
         NNetData data;
         SaveSystem.Load(PathManager.defaultNetPath, out data);
         SaveSystem.Save(PathManager.netPath, data);

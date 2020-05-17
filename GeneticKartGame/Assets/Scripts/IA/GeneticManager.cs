@@ -41,13 +41,15 @@ public class GeneticManager : MonoBehaviour
     }
 
     public void SaveBestGenome()
-    {
+    {   
+        AudioManager.instance.Play("PulseSound");
         SortPopulation();
         population[0].save(Application.persistentDataPath + "/net.dat");
     }
 
     public void LoadBestGenome()
     {
+        AudioManager.instance.Play("PulseSound");
         NNetData data;
         SaveSystem.Load(Application.persistentDataPath + "/net.dat", out data);
         controller.ResetWithNetwork(data.getNNet());

@@ -34,6 +34,7 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
+        instance.Play("MenuSound");
     }
 
     public void Play(string name)

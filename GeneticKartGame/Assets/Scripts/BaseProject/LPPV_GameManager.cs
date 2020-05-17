@@ -4,7 +4,6 @@ using UnityEngine;
 public class LPPV_GameManager : MonoBehaviour 
 {
 	[SerializeField] private GameObject sedan, sports, utility, bus;
-	public int lapsRequirement;
 
 	public float time;
 
@@ -31,7 +30,7 @@ public class LPPV_GameManager : MonoBehaviour
 			bus.SetActive (true);
 		}
 
-		time = 0;
+		time = 0;		
 	}
 
 	public void LoadLevel(int index)

@@ -223,6 +223,12 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: MenuSound
+    clip: {fileID: 8300000, guid: cf0a92ab1d54d4fa2a81417a540f694b, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
 --- !u!4 &95017723
 Transform:
   m_ObjectHideFlags: 0

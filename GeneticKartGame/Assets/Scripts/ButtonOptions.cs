@@ -34,6 +34,12 @@ public class ButtonOptions : MonoBehaviour
         AudioManager.instance.Play("PulseSound");
     }
 
+    public void resumeMenu(){
+        AudioManager.instance.Play("MenuSound");
+        SceneManager.LoadScene(0);
+        AudioManager.instance.Play("PulseSound");
+    }
+
     public void pulseSound(){
         AudioManager.instance.Play("PulseSound");
     }
@@ -43,6 +49,7 @@ public class ButtonOptions : MonoBehaviour
     }
 
     public void raceFinish(){
+        AudioManager.instance.Play("MenuSound");
         //Debug.Log("" + gameManager.GetComponent<LPPV_GameManager>().time + " " + text.text.ToString() + " " + LPPV_CarSelection.currentCarType);
         GameManager.ranking.UpdateRanking(gameManager.GetComponent<LPPV_GameManager>().time, text.text.ToString(), LPPV_CarSelection.currentCarType.ToString());
         SceneManager.LoadScene(4);

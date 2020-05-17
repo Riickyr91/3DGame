@@ -6,10 +6,10 @@ using UnityEngine.UI;
 public class SliderGroup : MonoBehaviour
 {
     public string carName;
-
     public Slider acSlider;
     public Slider maxVelSlider;
     public Slider drivingSlider;
+    public InputField newNumRounds;
 
     public void Start()
     {
@@ -40,5 +40,9 @@ public class SliderGroup : MonoBehaviour
     {
         GameManager.carSettings.data[carName][2] = drivingSlider.value;
         SaveSystem.Save(PathManager.carSettingsPath, GameManager.carSettings);
+    }
+
+    public void updateNumRounds(){
+        GameManager.numRounds = int.Parse(newNumRounds.text);
     }
 }

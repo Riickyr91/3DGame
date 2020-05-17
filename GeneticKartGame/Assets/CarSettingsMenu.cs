@@ -10,10 +10,11 @@ public class CarSettingsMenu : MonoBehaviour
     public SliderGroup busGroup;
 
     public void RestoreDefaultValues()
-    {
+    {   
+        AudioManager.instance.Play("PulseSound");
         GameManager.carSettings = new CarSettingsData();
         SaveSystem.Save(PathManager.carSettingsPath, GameManager.carSettings);
-
+        
         sedanGroup.ShowSliderValues();
         sportsGroup.ShowSliderValues();
         utilityGroup.ShowSliderValues();

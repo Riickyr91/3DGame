@@ -63,7 +63,7 @@ public class LPPV_CarSelection : MonoBehaviour {
 	}
 
 	public void SelectCar()
-	{
+	{	AudioManager.instance.StopPlaying("MenuSound");
 		currentCarType = (CarType)currentCar;
 		SceneManager.LoadScene (2);
 	}

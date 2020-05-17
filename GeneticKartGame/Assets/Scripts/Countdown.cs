@@ -12,12 +12,12 @@ public class Countdown : MonoBehaviour
     public GameObject carControllers;
     public AudioSource levelMusic;
     public GameObject lapRequirement;
-    public GameObject GameManager;
+    public GameObject gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        lapRequirement.GetComponent<Text>().text = "" + GameManager.GetComponent<LPPV_GameManager>().lapsRequirement;
+        lapRequirement.GetComponent<Text>().text = "" + GameManager.numRounds;
         StartCoroutine(countStart());
     }
 
