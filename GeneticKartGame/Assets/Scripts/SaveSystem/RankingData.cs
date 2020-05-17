@@ -6,49 +6,42 @@ using System.IO;
 [System.Serializable]
 public class RankingData 
 {
-    public int[] rankingPoints;
+    public float[] rankingTimes;
     public string[] rankingNames;
 
     private int rankingSize = 10;
 
     public RankingData()
     {
-        rankingPoints = new int[rankingSize];
+        rankingTimes = new float[rankingSize];
         rankingNames = new string[rankingSize];
-        for (int i = 0; i < rankingPoints.Length; i++)
+        for (int i = 0; i < rankingTimes.Length; i++)
         {
-            rankingPoints[i] = -1;
+            rankingTimes[i] = -1;
             rankingNames[i] = "None";
         }
     }
 
-    public void UpdateRanking(int points, string name)
+    public void UpdateRanking(float time, string name)
     {
         // Search for the first bigger
         int index = rankingSize - 1;
-        while (index >= 0 && rankingPoints[index] <= points)
+        while (index >= 0 && rankingTimes[index] <= time)
         {
             index--;
         }
 
 
         // Cast ranking arrays to lists
-        List<int> arrayPoints = new List<int>();
-        List<string> arrayNames = new List<string>();
-
-        for(int i = 0; i < rankingSize; i++)
-        {
-            arrayPoints.Add(rankingPoints[i]);
-            arrayNames.Add(rankingNames[i]);
-        }
-
+        List<float> arrayTimes = new List<float>(rankingTimes);
+        List<string> arrayNames = new List<string>(rankingNames);
 
 
         // Insert the new element
         index++;
         if(index < rankingSize)
         {
-            arrayPoints.Insert(index, points);
+            arrayTimes.Insert(index, time);
             arrayNames.Insert(index, name);
         }
 
@@ -56,7 +49,7 @@ public class RankingData
         // Cast list to arrays
         for(int i = 0; i < rankingSize; i++)
         {
-            rankingPoints[i] = arrayPoints[i];
+            rankingTimes[i] = arrayTimes[i];
             rankingNames[i] = arrayNames[i];
         }
     }
