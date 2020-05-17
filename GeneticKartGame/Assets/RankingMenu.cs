@@ -21,6 +21,7 @@ public class RankingMenu : MonoBehaviour
 
         float[] rankingTimes = ranking.rankingTimes;
         string[] rankingNames = ranking.rankingNames;
+        string[] rankingCars = ranking.rankingCars;
 
         string text = "";
         for (int i = 0; i < rankingTimes.Length; i++)
@@ -28,9 +29,9 @@ public class RankingMenu : MonoBehaviour
             //if (rankingTimes[i] >= 0)
             //{
                 text = "";
-                text += i + 1 + ".  " + rankingNames[i] + "  ";
+                text += i + 1 + ".  " + rankingNames[i] + " with " + rankingCars[i];
 
-                int numPoints = 30 - text.Length;
+                int numPoints = 40 - text.Length;
                 for (int j = 0; j < numPoints; j++)
                 {
                     text += ". ";

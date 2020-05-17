@@ -43,8 +43,8 @@ public class ButtonOptions : MonoBehaviour
     }
 
     public void raceFinish(){
-        Debug.Log("" + gameManager.GetComponent<LPPV_GameManager>().time + " " + text.text.ToString() + " " + LPPV_CarSelection.currentCarType);
-        //GameManager.ranking.UpdateRanking(gameManager.GetComponent<LPPV_GameManager>().time, text.text.ToString(), LPPV_CarSelection.currentCarType);
+        //Debug.Log("" + gameManager.GetComponent<LPPV_GameManager>().time + " " + text.text.ToString() + " " + LPPV_CarSelection.currentCarType);
+        GameManager.ranking.UpdateRanking(gameManager.GetComponent<LPPV_GameManager>().time, text.text.ToString(), LPPV_CarSelection.currentCarType.ToString());
         SceneManager.LoadScene(4);
         AudioManager.instance.Play("PulseSound");
     }
