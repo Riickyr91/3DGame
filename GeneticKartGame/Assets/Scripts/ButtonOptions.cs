@@ -37,4 +37,10 @@ public class ButtonOptions : MonoBehaviour
     public void quit(){
         Application.Quit();
     }
+
+    public void raceFinish(){
+        //GameManager.ranking.UpdateRanking(time, nombre);
+        SceneManager.LoadScene(4);
+        AudioManager.instance.Play("PulseSound");
+    }
 }
