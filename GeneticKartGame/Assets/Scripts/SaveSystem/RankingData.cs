@@ -19,7 +19,7 @@ public class RankingData
         rankingCars = new string[rankingSize];
         for (int i = 0; i < rankingTimes.Length; i++)
         {
-            rankingTimes[i] = -1;
+            rankingTimes[i] = float.PositiveInfinity;
             rankingNames[i] = "None";
             rankingCars[i] = "Cars";
         }
@@ -44,7 +44,7 @@ public class RankingData
         // Insert the new element
         if(index < rankingSize)
         {
-            arrayTimes.Insert(index, time/10);
+            arrayTimes.Insert(index, time);
             arrayNames.Insert(index, name);
             arrayCars.Insert(index, car);
         }

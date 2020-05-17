@@ -26,7 +26,7 @@ public class RankingMenu : MonoBehaviour
         string text = "";
         for (int i = 0; i < rankingTimes.Length; i++)
         {
-            if (rankingTimes[i] >= 0)
+            if (rankingTimes[i] != float.PositiveInfinity)
             {
                 text = "";
                 text += i + 1 + ".  " + rankingNames[i] + " with " + rankingCars[i];
