@@ -53,4 +53,11 @@ public class IASettingsMenu : MonoBehaviour
         SaveSystem.Save(PathManager.iaSettingsPath, GameManager.iaSettings);
         ShowValues();
     }
+
+    public void RestoreDefaultIA()
+    {
+        NNetData data;
+        SaveSystem.Load(PathManager.defaultNetPath, out data);
+        SaveSystem.Save(PathManager.netPath, data);
+    }
 }

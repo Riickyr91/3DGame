@@ -9,35 +9,27 @@ public class GeneticManager : MonoBehaviour
     [Header("References")]
     public CarController controller;
 
-    [Header("Controls")]
-    public int populationSize = 85;
-    //[Range(0.0f, 1.0f)]
-    //public float mutationRate = 0.055f;
-
-    //[Header("Crossover Controls")]
-    //public int bestAgentSelection = 8;
-    //public int worstAgentSelection = 3;
-    //public int numberToCrossover;           // Number of cross and  the rest will be random.
-
-    //private List<int> genePool = new List<int>();
-
-    //private int naturallySelected;
-
-    private List<NNet> population;
-
     [Header("Public View")]
-    public int currentGeneration;
-    public int currentGenome = 0;
+    public int populationSize = 85;
     public int maxGeneration = 5;
     public int eliteListSize = 5;
     public float bestPercentage = 0.4f;
+
+    public int currentGeneration = 0;
+    public int currentGenome = 0;
     public float alpha = 0.5f;
 
+    private List<NNet> population;
     private bool isSimulationFinish = false;
     public bool playBestCar = false;
 
     private void Start()
     {
+        populationSize = GameManager.iaSettings.populationSize;
+        maxGeneration = GameManager.iaSettings.maxGenerations;
+        eliteListSize = GameManager.iaSettings.numElite;
+        bestPercentage = GameManager.iaSettings.bestPercentage;
+
         if (playBestCar)
         {
             LoadBestGenome();

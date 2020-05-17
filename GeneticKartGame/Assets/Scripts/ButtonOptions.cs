@@ -48,4 +48,10 @@ public class ButtonOptions : MonoBehaviour
         SceneManager.LoadScene(4);
         AudioManager.instance.Play("PulseSound");
     }
+
+    public void IASimulation()
+    {
+        SceneManager.LoadScene(6);
+        AudioManager.instance.Play("PulseSound");
+    }
 }
