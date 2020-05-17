@@ -5,6 +5,9 @@ public class LPPV_GameManager : MonoBehaviour
 {
 	[SerializeField] private GameObject sedan, sports, utility, bus;
 	public int lapsRequirement;
+
+	public float time;
+
 	private void Start()
 	{
 		if (sedan == null || sports == null || utility == null || bus == null)
@@ -23,10 +26,18 @@ public class LPPV_GameManager : MonoBehaviour
 			utility.SetActive (true);
 		else if (LPPV_CarSelection.currentCarType == LPPV_CarSelection.CarType.Bus)
 			bus.SetActive (true);
+
+		time = 0;
 	}
 
 	public void LoadLevel(int index)
 	{
 		SceneManager.LoadScene(index);
+	}
+
+	public void updateTime(float bestTime) {
+
+		time = bestTime;
+		
 	}
 }

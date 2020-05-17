@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ButtonOptions : MonoBehaviour
 {
+    public GameObject gameManager;
+    public InputField text;
+    
     public void playGame(){
         SceneManager.LoadScene(1);
         AudioManager.instance.Play("PulseSound");
@@ -39,7 +43,8 @@ public class ButtonOptions : MonoBehaviour
     }
 
     public void raceFinish(){
-        //GameManager.ranking.UpdateRanking(time, nombre);
+        Debug.Log("" + gameManager.GetComponent<LPPV_GameManager>().time + " " + text.text.ToString() + " " + LPPV_CarSelection.currentCarType);
+        //GameManager.ranking.UpdateRanking(gameManager.GetComponent<LPPV_GameManager>().time, text.text.ToString(), LPPV_CarSelection.currentCarType);
         SceneManager.LoadScene(4);
         AudioManager.instance.Play("PulseSound");
     }

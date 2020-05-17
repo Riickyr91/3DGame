@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.32079986, g: 0.26904058, b: 0.41343564, a: 1}
+  m_IndirectSpecularColor: {r: 0.32076043, g: 0.268996, b: 0.41342872, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -132,13 +132,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: UtilityVehicle
       objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 557cc767631fc1d4ba851e8a99ea9628, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 557cc767631fc1d4ba851e8a99ea9628, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.48
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 557cc767631fc1d4ba851e8a99ea9628, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.89
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 557cc767631fc1d4ba851e8a99ea9628, type: 3}
       propertyPath: m_LocalPosition.z
@@ -201,13 +205,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: SportsCar
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: f5c9ba489e100664d8b19258b54853fe, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: f5c9ba489e100664d8b19258b54853fe, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.75
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: f5c9ba489e100664d8b19258b54853fe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.9488
+      value: 1.75
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: f5c9ba489e100664d8b19258b54853fe, type: 3}
       propertyPath: m_LocalPosition.z
@@ -538,13 +546,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bus
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e6ebfeb6367abd448a896b5de2abb3a1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e6ebfeb6367abd448a896b5de2abb3a1, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.36
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e6ebfeb6367abd448a896b5de2abb3a1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.67
+      value: 2.4
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e6ebfeb6367abd448a896b5de2abb3a1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -874,7 +886,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 867493855}
   m_LocalRotation: {x: -0, y: 0.44725227, z: -0, w: 0.8944079}
-  m_LocalPosition: {x: -12.31, y: 3.4332066, z: -62.023}
+  m_LocalPosition: {x: -12.747, y: 2.832, z: -61.44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1254,13 +1266,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sedan
       objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 9bb588823d8da76499558fe774532400, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: 9bb588823d8da76499558fe774532400, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.8
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: 9bb588823d8da76499558fe774532400, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.9
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: 9bb588823d8da76499558fe774532400, type: 3}
       propertyPath: m_LocalPosition.z

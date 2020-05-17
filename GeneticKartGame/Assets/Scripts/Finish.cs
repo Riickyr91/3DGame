@@ -23,29 +23,34 @@ public class Finish : MonoBehaviour
 
     public GameObject finishMenu;
 
-    void OnTriggerEnter() {
-        sedanCar.GetComponent<AudioSource>().Stop();
-        busCar.GetComponent<AudioSource>().Stop();
-        sportCar.GetComponent<AudioSource>().Stop();
-        utilityCar.GetComponent<AudioSource>().Stop();
-        sedanCarCam.SetActive(false);
-        sedanFinishCam.SetActive(true);
-        busCarCam.SetActive(false);
-        busFinishCam.SetActive(true);  
-        sportCarCam.SetActive(false);
-        sportFinishCam.SetActive(true);        
-        utilityCarCam.SetActive(false);
-        utilityFinishCam.SetActive(true);
 
-        levelMusic.GetComponent<AudioSource>().Stop();
+    void OnTriggerEnter(Collider other) {
 
-        sedanFinishCam.GetComponent<AudioSource>().Play();
-        busFinishCam.GetComponent<AudioSource>().Play();
-        sportFinishCam.GetComponent<AudioSource>().Play();
-        utilityFinishCam.GetComponent<AudioSource>().Play();
+        if(other.gameObject.name != "SportsCar IA"){
 
-        finishMenu.SetActive(true);
+            sedanCar.GetComponent<AudioSource>().Stop();
+            busCar.GetComponent<AudioSource>().Stop();
+            sportCar.GetComponent<AudioSource>().Stop();
+            utilityCar.GetComponent<AudioSource>().Stop();
+            sedanCarCam.SetActive(false);
+            sedanFinishCam.SetActive(true);
+            busCarCam.SetActive(false);
+            busFinishCam.SetActive(true);  
+            sportCarCam.SetActive(false);
+            sportFinishCam.SetActive(true);        
+            utilityCarCam.SetActive(false);
+            utilityFinishCam.SetActive(true);
 
+            levelMusic.GetComponent<AudioSource>().Stop();
+
+            sedanFinishCam.GetComponent<AudioSource>().Play();
+            busFinishCam.GetComponent<AudioSource>().Play();
+            sportFinishCam.GetComponent<AudioSource>().Play();
+            utilityFinishCam.GetComponent<AudioSource>().Play();
+
+            finishMenu.SetActive(true);
+            
+        }
     }
 
 }
