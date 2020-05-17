@@ -18,14 +18,18 @@ public class LPPV_GameManager : MonoBehaviour
 		utility.SetActive(false);
 		bus.SetActive(false);
 
-		if (LPPV_CarSelection.currentCarType == LPPV_CarSelection.CarType.Sedan)
+		if (LPPV_CarSelection.currentCarType == LPPV_CarSelection.CarType.Sedan){
 			sedan.SetActive (true);
-		else if (LPPV_CarSelection.currentCarType == LPPV_CarSelection.CarType.Sports)
+		}
+		else if (LPPV_CarSelection.currentCarType == LPPV_CarSelection.CarType.Sports){
 			sports.SetActive (true);
-		else if (LPPV_CarSelection.currentCarType == LPPV_CarSelection.CarType.Utility)
+		}
+		else if (LPPV_CarSelection.currentCarType == LPPV_CarSelection.CarType.Utility){
 			utility.SetActive (true);
-		else if (LPPV_CarSelection.currentCarType == LPPV_CarSelection.CarType.Bus)
+		}
+		else if (LPPV_CarSelection.currentCarType == LPPV_CarSelection.CarType.Bus){
 			bus.SetActive (true);
+		}
 
 		time = 0;
 	}

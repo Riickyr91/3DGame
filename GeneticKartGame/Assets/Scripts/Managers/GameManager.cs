@@ -17,6 +17,5 @@ public static class GameManager
         SaveSystem.Load(PathManager.carSettingsPath, out carSettings);
         if (carSettings == default(CarSettingsData)) carSettings = new CarSettingsData();
 
-
     }
 }

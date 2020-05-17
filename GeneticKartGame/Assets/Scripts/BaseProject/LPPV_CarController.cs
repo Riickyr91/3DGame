@@ -26,6 +26,7 @@ public class LPPV_CarController : MonoBehaviour {
 		public WheelType wheelType;
 	}
 
+
 	[SerializeField] private Wheel[] wheels = new Wheel[4];
 	[SerializeField] private float maxTorque = 2000f, maxBrakeTorque = 500f, maxSteerAngle = 30f; //max Torque of Wheels, max Brake Torque and Maximum Steer Angle of steerable wheels
 	[SerializeField] private static int NoOfGears = 5;
@@ -70,12 +71,16 @@ public class LPPV_CarController : MonoBehaviour {
 	}
 
 	private void Start () 
-	{
+	{	
 		_rgbd = GetComponent<Rigidbody> ();
 		if (centerOfMass != null && _rgbd != null)
 			_rgbd.centerOfMass = centerOfMass.localPosition;
 		for (int i = 0; i < wheels.Length; ++i)
 			VisualizeWheel (wheels [i]);
+
+		maxTorque = GameManager.carSettings.data[LPPV_CarSelection.currentCarType.ToString()][0];
+		topSpeed = GameManager.carSettings.data[LPPV_CarSelection.currentCarType.ToString()][1];
+		_rgbd.angularDrag = GameManager.carSettings.data[LPPV_CarSelection.currentCarType.ToString()][2];
 	}
 
 	private void Move(float motorInput, float steerInput, bool handBrake)
