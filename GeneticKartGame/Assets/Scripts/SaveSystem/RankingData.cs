@@ -52,5 +52,8 @@ public class RankingData
             rankingTimes[i] = arrayTimes[i];
             rankingNames[i] = arrayNames[i];
         }
+
+        // Save ranking update
+        SaveSystem.Save(Application.persistentDataPath + "/ranking.dat", this);
     }
 }
