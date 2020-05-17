@@ -6,6 +6,8 @@ public static class GameManager
 {
     public static RankingData ranking;
     public static CarSettingsData carSettings;
+    public static IASettingsData iaSettings;
+    public static int numRounds;
 
     static GameManager()
     {
@@ -17,5 +19,10 @@ public static class GameManager
         SaveSystem.Load(PathManager.carSettingsPath, out carSettings);
         if (carSettings == default(CarSettingsData)) carSettings = new CarSettingsData();
 
+        // Load ia settings data
+        SaveSystem.Load(PathManager.iaSettingsPath, out iaSettings);
+        if (iaSettings == default(IASettingsData)) iaSettings = new IASettingsData();
+
+        numRounds = 1;
     }
 }
