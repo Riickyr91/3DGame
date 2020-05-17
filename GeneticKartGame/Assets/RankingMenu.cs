@@ -8,6 +8,10 @@ public class RankingMenu : MonoBehaviour
 {
     public Text rankingText;
 
+    private float minute;
+    private float second;
+    private float milli;
+    private float aux;
     private void Start()
     {
         ShowRanking();
@@ -31,12 +35,18 @@ public class RankingMenu : MonoBehaviour
                 text = "";
                 text += i + 1 + ".  " + rankingNames[i] + " with " + rankingCars[i];
 
-                int numPoints = 40 - text.Length;
+                int numPoints = 30 - text.Length;
                 for (int j = 0; j < numPoints; j++)
                 {
                     text += ". ";
                 }
-                text += rankingTimes[i] + "\n";
+
+                milli = Mathf.Floor(rankingTimes[i]) % 10;
+                aux = Mathf.Floor(rankingTimes[i] / 10);
+                second = Mathf.Floor(aux % 60);
+                minute  = Mathf.Floor(aux / 60);
+                
+                text += " " + minute + ":" + second + "." + milli + "\n";
 
                 rankingText.text += text;
             }
