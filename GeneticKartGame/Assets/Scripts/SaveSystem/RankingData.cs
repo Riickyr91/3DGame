@@ -28,10 +28,10 @@ public class RankingData
     public void UpdateRanking(float time, string name, string car)
     {
         // Search for the first bigger
-        int index = rankingSize - 1;
-        while (index >= 0 && rankingTimes[index] <= time)
+        int index = 0;
+        while (index < rankingSize && rankingTimes[index] <= time)
         {
-            index--;
+            index++;
         }
 
 
@@ -42,7 +42,6 @@ public class RankingData
 
 
         // Insert the new element
-        index++;
         if(index < rankingSize)
         {
             arrayTimes.Insert(index, time/10);

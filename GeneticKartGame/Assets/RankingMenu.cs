@@ -17,7 +17,7 @@ public class RankingMenu : MonoBehaviour
     {
         rankingText.text = "";
 
-        RankingData ranking = new RankingData();
+        RankingData ranking = GameManager.ranking;
 
         float[] rankingTimes = ranking.rankingTimes;
         string[] rankingNames = ranking.rankingNames;
@@ -26,8 +26,8 @@ public class RankingMenu : MonoBehaviour
         string text = "";
         for (int i = 0; i < rankingTimes.Length; i++)
         {
-            //if (rankingTimes[i] >= 0)
-            //{
+            if (rankingTimes[i] >= 0)
+            {
                 text = "";
                 text += i + 1 + ".  " + rankingNames[i] + " with " + rankingCars[i];
 
@@ -39,7 +39,7 @@ public class RankingMenu : MonoBehaviour
                 text += rankingTimes[i] + "\n";
 
                 rankingText.text += text;
-            //}
+            }
         }
     }
 
