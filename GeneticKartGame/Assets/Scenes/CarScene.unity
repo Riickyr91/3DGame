@@ -485,7 +485,7 @@ MonoBehaviour:
   carControllers: {fileID: 582475507}
   levelMusic: {fileID: 743880391}
   lapRequirement: {fileID: 498428316}
-  GameManager: {fileID: 652234453}
+  gameManager: {fileID: 0}
 --- !u!4 &107927190
 Transform:
   m_ObjectHideFlags: 0
@@ -2577,7 +2577,6 @@ MonoBehaviour:
   sports: {fileID: 6134962}
   utility: {fileID: 932046901}
   bus: {fileID: 1845267102}
-  lapsRequirement: 0
   time: 0
 --- !u!4 &652234455
 Transform:
@@ -4659,7 +4658,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Raking
+  m_Text: Ranking
 --- !u!222 &1006464985
 CanvasRenderer:
   m_ObjectHideFlags: 0
